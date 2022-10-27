@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building....'
+                bat 'python main.py'
             }
         }
         stage('Tests') {
             steps {
-                sh 'py.test main.py'
+                bat 'py.test main.py'
             }
         }
         stage('Deploy') {
