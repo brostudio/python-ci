@@ -3,12 +3,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'python main.py'
+                echo 'Building....'
             }
         }
         stage('Tests') {
             steps {
                 sh 'py.test main.py'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
