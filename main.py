@@ -18,4 +18,4 @@ if __name__ == '__main__':
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 
 def test_answer():
-    assert inc(3) == 5
+    assert inc(3) == 4
