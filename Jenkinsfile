@@ -8,12 +8,12 @@ pipeline {
         }
         stage('Tests') {
             steps {
-                sh 'py.test main.py'
+                bat 'py.test main.py'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'python main.py'
+                bat 'python main.py'
             }
         }
     }
