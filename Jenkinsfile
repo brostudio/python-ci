@@ -4,17 +4,18 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                echo "Building..."
                 bat "C:\\Users\\Student\\AppData\\Local\\Programs\\Python\\Python310\\python.exe -v"
             }
         }
         stage('Tests') {
             steps {
-                bat 'py.test main.py'
+                bat 'C:\\Users\\Student\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\py.test.exe main.py'
             }
         }
         stage('Deploy') {
             steps {
-                bat 'python main.py'
+                bat 'C:\\Users\\Student\\AppData\\Local\\Programs\\Python\\Python310\\python.exe main.py'
             }
         }
     }
