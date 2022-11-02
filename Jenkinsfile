@@ -1,21 +1,24 @@
 pipeline {
     agent any
 
+    environment{
+		PYTHON_PATH = "C:\\Users\\Student\\AppData\\Local\\Programs\\Python\\Python310"
+    }
     stages {
         stage('Build') {
             steps {
                 echo "Building..."
-                bat "C:\\Users\\Student\\AppData\\Local\\Programs\\Python\\Python310\\python.exe -v"
+                bat "${env.PYTHON_PATH}\\python.exe -v"
             }
         }
         stage('Tests') {
             steps {
-                bat 'C:\\Users\\Student\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\py.test.exe main.py'
+                bat '${env.PYTHON_PATH}\\Scripts\\py.test.exe main.py'
             }
         }
         stage('Deploy') {
             steps {
-                bat 'C:\\Users\\Student\\AppData\\Local\\Programs\\Python\\Python310\\python.exe main.py'
+                bat '${env.PYTHON_PATH}\\python.exe main.py'
             }
         }
     }
