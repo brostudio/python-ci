@@ -7,17 +7,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'python -v'
+                powershell 'python -v'
             }
         }
         stage('Tests') {
             steps {
-                bat 'py.test main.py'
+                powershell 'py.test main.py'
             }
         }
         stage('Deploy') {
             steps {
-                bat 'python main.py'
+                powershell 'python main.py'
             }
         }
     }
